@@ -1,0 +1,12 @@
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\bin\Debug\net10.0\ClearWealth.Domain.deps.json
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\bin\Debug\net10.0\ClearWealth.Domain.dll
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\bin\Debug\net10.0\ClearWealth.Domain.pdb
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.AssemblyInfoInputs.cache
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.AssemblyInfo.cs
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.csproj.CoreCompileInputs.cache
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.sourcelink.json
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.dll
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\refint\ClearWealth.Domain.dll
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ClearWealth.Domain.pdb
+H:\repos\finance-tracker\finance-tracker\src\ClearWealth.Domain\obj\Debug\net10.0\ref\ClearWealth.Domain.dll
