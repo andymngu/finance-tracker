@@ -25,7 +25,15 @@ project.assets.json
 .DS_Store
 Thumbs.db
 
-# Next.js (for when you add the frontend)
+# Node / Next.js
 node_modules/
 .next/
 .env.local
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js build output
+out/
+build/

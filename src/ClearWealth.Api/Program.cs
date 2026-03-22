@@ -15,8 +15,27 @@ builder.Services.AddScoped<IPlaidClient, StubPlaidClient>();
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<TransactionService>();
 
+builder.Services.AddCors(opt => opt.AddDefaultPolicy(policy =>
+    policy.WithOrigins("http://localhost:3000")
+          .AllowAnyHeader()
+          .AllowAnyMethod()));
+
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(opt => opt.TokenValidationParameters = new()
+//    {
+//        ValidateIssuer = true,
+//        ValidateAudience = true,
+//        ValidateLifetime = true,
+//        ValidateIssuerSigningKey = true,
+//        ValidIssuer = "clearwealth",
+//        ValidAudience = "clearwealth",
+//        IssuerSigningKey = new SymmetricSecurityKey(
+//            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!))
+//    });
+
 var app = builder.Build();
 
+app.UseCors();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapControllers();  // ← this must be here
