@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAccountRepository, StubAccountRepository>();
+builder.Services.AddScoped<IUserRepository, StubUserRepository>();
 builder.Services.AddScoped<ITransactionRepository, StubTransactionRepository>();
 builder.Services.AddScoped<IPlaidClient, StubPlaidClient>();
 builder.Services.AddScoped<AccountService>();
