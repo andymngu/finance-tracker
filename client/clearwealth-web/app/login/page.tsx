@@ -9,13 +9,31 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  async function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
-    
-    // Stub — bypass auth entirely for now, just issue a fake token and go
-    saveToken('stub-token-for-development');
+async function handleLogin(e: React.FormEvent) {
+  e.preventDefault();
+  
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5057'}/api/auth/login`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      }
+    );
+
+    if (!res.ok) {
+      alert('Invalid credentials');
+      return;
+    }
+
+    const data = await res.json();
+    saveToken(data.token);
     router.push('/dashboard');
+  } catch (err) {
+    alert('Login failed: ' + (err instanceof Error ? err.message : 'Unknown error'));
   }
+}
 
   return (
     <main style={{

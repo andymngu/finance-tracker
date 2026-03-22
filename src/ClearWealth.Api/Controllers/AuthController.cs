@@ -13,7 +13,7 @@ public class AuthController : ControllerBase
     public AuthController(IConfiguration config) => _config = config;
 
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginRequest req)
+    public async Task<IActionResult> Login([FromBody] LoginRequest req)
     {
         // TODO: verify against real user in database
         // For now — accept any credentials and issue a token
