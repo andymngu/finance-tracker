@@ -1,7 +1,7 @@
 using ClearWealth.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+using ClearWealth.Api.Extensions;
 
 namespace ClearWealth.Api.Controllers;
 
@@ -11,23 +11,16 @@ namespace ClearWealth.Api.Controllers;
 public class AccountsController : ControllerBase
 {
     private readonly AccountService _svc;
-    public AccountsController(AccountService svc) => _svc = svc;
+    public AccountsController(AccountService svc)
+    {
+        _svc = svc;
+    }
 
     [HttpGet]
-    public async Task<IActionResult> GetAccounts()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (userId == null) return Unauthorized();
-        
-        return Ok(await _svc.GetAccountsAsync(Guid.Parse(userId)));
-    }
+    public async Task<IActionResult> GetAccounts() =>
+        Ok(await _svc.GetAccountsAsync(User.GetUserId()));
 
     [HttpGet("net-worth")]
-    public async Task<IActionResult> GetNetWorth()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (userId == null) return Unauthorized();
-        
-        return Ok(await _svc.GetNetWorthAsync(Guid.Parse(userId)));
-    }
+    public async Task<IActionResult> GetNetWorth() =>
+        Ok(await _svc.GetNetWorthAsync(User.GetUserId()));
 }
