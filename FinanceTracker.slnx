@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ClearWealth.Api/ClearWealth.Api.csproj" />
+    <Project Path="src/ClearWealth.Application/ClearWealth.Application.csproj" />
+    <Project Path="src/ClearWealth.Domain/ClearWealth.Domain.csproj" />
+  </Folder>
+</Solution>
